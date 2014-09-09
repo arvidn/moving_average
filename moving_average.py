@@ -73,7 +73,7 @@ with open('rfc793-weight-fp.dat', 'w+') as f:
 
 		print >>f, '%d\t%f\t%f\t%f' % (i, rtt, srtt, average)
 
-with open('sliding_average.gnuplot', 'w+') as out:
+with open('moving_average.gnuplot', 'w+') as out:
 	out.write('''
 		set term png size 1200,700 small
 		set ylabel "RTT (ms)"
@@ -112,5 +112,5 @@ with open('sliding_average.gnuplot', 'w+') as out:
 			"rfc793-weight-fp.dat" using 1:4 with lines title "average RTT"
 		''')
 
-os.system('gnuplot sliding_average.gnuplot');
+os.system('gnuplot moving_average.gnuplot');
 
