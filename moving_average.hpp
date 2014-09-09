@@ -44,6 +44,7 @@ struct moving_average
 
 	void add_sample(int s)
 	{
+		// fixed point
 		s *= 64;
 		int deviation;
 
